@@ -1,0 +1,30 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "trabajos"
+    label: "Trabajos"
+    folder: "content/trabajos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Número", name: "number", widget: "string", required: false }
+      - { label: "Bajada", name: "subtitle", widget: "text", required: false }
+      - { label: "Categoría", name: "category", widget: "string", required: false }
+      - { label: "Año", name: "year", widget: "string", required: false }
+      - { label: "Portada", name: "cover", widget: "image", required: false }
+      - { label: "Video local", name: "video", widget: "file", required: false }
+      - { label: "Link YouTube/Vimeo", name: "video_url", widget: "string", required: false }
+      - { label: "Descripción del caso", name: "description", widget: "markdown", required: false }
+      - { label: "Rol", name: "role", widget: "string", required: false }
+      - { label: "Destacado en home", name: "featured", widget: "boolean", default: false }
+      - label: "Galería"
+        name: "images"
+        widget: "list"
+        required: false
+        field: { label: "Imagen", name: "image", widget: "image" }
